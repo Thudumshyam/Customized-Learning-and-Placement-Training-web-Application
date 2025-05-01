@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Papers – Interview Preparation</title>
+    <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --text-secondary: #b3b3b3;
+            --accent-color: #4a90e2;
+            --hover-bg: #333333;
+            --border-color: #404040;
+            --glow-color: rgba(74, 144, 226, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: titleReveal 1.2s ease forwards 0.5s;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+            animation: lineReveal 0.8s ease forwards 1.5s;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: subtitleReveal 1s ease forwards 1s;
+        }
+
+        .problems-list {
+            background: var(--secondary-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards 0.8s;
+            position: relative;
+        }
+
+        .problems-list::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(74, 144, 226, 0.05), transparent);
+            z-index: 0;
+        }
+
+        .problem-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-color);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.5s ease forwards;
+            animation-delay: calc(0.1s * var(--i));
+        }
+
+        .problem-item:last-child {
+            border-bottom: none;
+        }
+
+        .problem-item:hover {
+            background-color: var(--hover-bg);
+            transform: translateX(5px);
+        }
+
+        .problem-number {
+            width: 40px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .problem-title {
+            flex: 1;
+            font-size: 1rem;
+            margin-left: 1rem;
+            color: var(--text-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .problem-title:hover {
+            color: var(--accent-color);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--secondary-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards 1.5s;
+        }
+
+        .back-button:hover {
+            background: var(--hover-bg);
+            transform: translateX(-5px);
+            box-shadow: 0 0 10px var(--glow-color);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes titleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes subtitleReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineReveal {
+            0% {
+                transform: translateX(-50%) scaleX(0);
+            }
+            100% {
+                transform: translateX(-50%) scaleX(1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .problem-item {
+                padding: 0.8rem 1rem;
+            }
+
+            .back-button {
+                top: 10px;
+                left: 10px;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    <a href="index.html" class="back-button">
+        <span>←</span> Back
+    </a>
+    <div class="container">
+        <header>
+            <h1>Placement Papers – Interview Preparation</h1>
+            <p class="subtitle">Company Placement Papers</p>
+        </header>
+
+        <div class="problems-list">
+            <a href="https://www.indiabix.com/placement-papers/3i-infotech/" class="problem-item" target="_blank" style="--i: 1">
+                <span class="problem-number">1</span>
+                <span class="problem-title">3i Infotech</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/aai/" class="problem-item" target="_blank" style="--i: 2">
+                <span class="problem-number">2</span>
+                <span class="problem-title">AAI</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/abacus/" class="problem-item" target="_blank" style="--i: 3">
+                <span class="problem-number">3</span>
+                <span class="problem-title">ABACUS</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/abb/" class="problem-item" target="_blank" style="--i: 4">
+                <span class="problem-number">4</span>
+                <span class="problem-title">ABB</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/accenture/" class="problem-item" target="_blank" style="--i: 5">
+                <span class="problem-number">5</span>
+                <span class="problem-title">Accenture</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/aditi/" class="problem-item" target="_blank" style="--i: 6">
+                <span class="problem-number">6</span>
+                <span class="problem-title">Aditi</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/aditi/" class="problem-item" target="_blank" style="--i: 7">
+                <span class="problem-number">7</span>
+                <span class="problem-title">Adobe</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/aditi/" class="problem-item" target="_blank" style="--i: 8">
+                <span class="problem-number">8</span>
+                <span class="problem-title">ADP</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/agreeya/" class="problem-item" target="_blank" style="--i: 9">
+                <span class="problem-number">9</span>
+                <span class="problem-title">Agreeya</span>
+            </a>
+            <a href="https://chatgpt.com/c/67fd1a19-daac-8001-ba2e-2d4cfe3c89b6" class="problem-item" target="_blank" style="--i: 10">
+                <span class="problem-number">10</span>
+                <span class="problem-title">Akamai</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/alcatel-lucent/" class="problem-item" target="_blank" style="--i: 11">
+                <span class="problem-number">11</span>
+                <span class="problem-title">Alcatel Lucent</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/companies/#google_vignette" class="problem-item" target="_blank" style="--i: 12">
+                <span class="problem-number">12</span>
+                <span class="problem-title">Allfon</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/alumnus/" class="problem-item" target="_blank" style="--i: 13">
+                <span class="problem-number">13</span>
+                <span class="problem-title">Alumnus</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/amazon/" class="problem-item" target="_blank" style="--i: 14">
+                <span class="problem-number">14</span>
+                <span class="problem-title">Amazon</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/amdocs/" class="problem-item" target="_blank" style="--i: 15">
+                <span class="problem-number">15</span>
+                <span class="problem-title">AMDOCS</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/ami/" class="problem-item" target="_blank" style="--i: 16">
+                <span class="problem-number">16</span>
+                <span class="problem-title">AMI</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/companies/#google_vignette" class="problem-item" target="_blank" style="--i: 17">
+                <span class="problem-number">17</span>
+                <span class="problem-title">Andhra Bank</span>
+            </a>
+            <a href="https://www.indiabix.com/placement-papers/applabs/" class="problem-item" target="_blank" style="--i: 18">
+                <span class="problem-number">18</span>
+                <span class="problem-title">AppLabs</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Particle animation
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = 0;
+        let mouseY = 0;
+        let radius = 150;
+
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Particle class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.color = `rgba(74, 144, 226, ${Math.random() * 0.5 + 0.1})`;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Bounce off edges
+                if (this.x > canvas.width || this.x < 0) {
+                    this.speedX = -this.speedX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.speedY = -this.speedY;
+                }
+
+                // Mouse interaction
+                let dx = mouseX - this.x;
+                let dy = mouseY - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < radius) {
+                    let angle = Math.atan2(dy, dx);
+                    let force = (radius - distance) / radius;
+                    this.x -= Math.cos(angle) * force * 2;
+                    this.y -= Math.sin(angle) * force * 2;
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Create particles
+        function init() {
+            particles = [];
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+        }
+        init();
+
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Mouse move event
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

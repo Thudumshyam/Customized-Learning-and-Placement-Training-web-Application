@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Optimization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #4285f4, #34a853);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #b3b3b3;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(45deg, #4285f4, #34a853, #4285f4);
+            background-size: 200% 200%;
+            animation: gradient 2s linear infinite;
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .video-card.loaded::before {
+            animation: none;
+            background: linear-gradient(45deg, #4285f4, #34a853);
+        }
+
+        .video-card.loaded:hover::before {
+            background: linear-gradient(45deg, #4285f4, #34a853, #4285f4);
+            background-size: 200% 200%;
+            animation: gradient 2s linear infinite;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            z-index: 2;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @media (max-width: 1200px) {
+            .video-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">← Back</button>
+    <canvas id="particles"></canvas>
+    
+    <div class="container">
+        <div class="header">
+            <h1>LinkedIn Optimization</h1>
+            <p>Craft a standout LinkedIn profile with optimized headlines, impactful summaries, and strategic keyword placement to get noticed.</p>
+        </div>
+
+        <div class="video-grid" id="videoGrid"></div>
+    </div>
+
+    <script src="particles.js"></script>
+    <script>
+        const videos = [
+            'X96WuO3UY8g',
+            'pigF0vBTBvA',
+            'xl9jnJc7_dE',
+            'Au7vEXZhvFo',
+            'U4Kcz2h2Gl4',
+            'WXgvL6yEArY',
+            'A5yLk6JnTV0',
+            'xNuaBr8YHbE',
+            'M2Lh5Bj1PlQ',
+            'ne_othht6nA',
+            'AJocoZEV7ew',
+            '8y3pmedK2ec',
+            'dsAHTr1vVY4',
+            'B4OhuzwLc9o',
+            'VltvEyjsmX4'
+        ];
+
+        function loadVideos() {
+            const videoGrid = document.getElementById('videoGrid');
+            
+            videos.forEach(videoId => {
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card';
+                
+                const videoContainer = document.createElement('div');
+                videoContainer.className = 'video-container';
+                videoContainer.innerHTML = `
+                    <iframe
+                        src="https://www.youtube.com/embed/${videoId}"
+                        title="YouTube video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        onload="this.closest('.video-card').classList.add('loaded')"
+                    ></iframe>
+                `;
+
+                videoCard.appendChild(videoContainer);
+                videoGrid.appendChild(videoCard);
+            });
+        }
+
+        // Load videos when the page loads
+        window.onload = loadVideos;
+    </script>
+</body>
+</html> 

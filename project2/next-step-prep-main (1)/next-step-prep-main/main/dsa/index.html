@@ -1,0 +1,2541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Progress Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-weight: 500;
+            font-size: 1em;
+            backdrop-filter: blur(5px);
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='../index.html'">← Back</button>
+    <canvas id="particles"></canvas>
+    <div class="container">
+        <header>
+            <h1>DSA Progress Tracker</h1>
+            <p class="subtitle">Master Data Structures & Algorithms systematically through our curated collection of 386 essential problems</p>
+        </header>
+        
+        <div class="overall-progress">
+            <div class="progress-text">Progress: <span id="progress-fraction">0 / 386</span></div>
+            <div class="progress-container">
+                <div class="progress-bar" id="overall-progress-bar"></div>
+            </div>
+        </div>
+
+        <main>
+            <!-- Arrays section -->
+            <section class="topic" data-topic="Arrays">
+                <h2>
+                    <div class="title-section">
+                        <span>Arrays</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/36)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="reverse-array">
+                        <label for="reverse-array">
+                            <a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank">1. Reverse the array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="min-max-array">
+                        <label for="min-max-array">
+                            <a href="https://practice.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1" target="_blank">2. Find the maximum and minimum element in an array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="kth-element">
+                        <label for="kth-element">
+                            <a href="https://practice.geeksforgeeks.org/problems/kth-smallest-element5635/1" target="_blank">3. Find the "Kth" max and min element of an array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="sort-012">
+                        <label for="sort-012">
+                            <a href="https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1" target="_blank">4. Sort array of 0s, 1s and 2s without sorting algo</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="move-negative">
+                        <label for="move-negative">
+                            <a href="https://practice.geeksforgeeks.org/problems/move-all-negative-elements-to-end1813/1" target="_blank">5. Move all negative elements to one side of array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="union-intersection">
+                        <label for="union-intersection">
+                            <a href="https://practice.geeksforgeeks.org/problems/union-of-two-arrays3538/1" target="_blank">6. Find Union and Intersection of two sorted arrays</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="rotate-array">
+                        <label for="rotate-array">
+                            <a href="https://practice.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1" target="_blank">7. Cyclically rotate array by one</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="largest-sum-subarray">
+                        <label for="largest-sum-subarray">
+                            <a href="https://practice.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1" target="_blank">8. Find Largest sum contiguous Subarray [V. IMP]</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="minimize-height">
+                        <label for="minimize-height">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimize-the-heights3351/1" target="_blank">9. Minimise the maximum difference between heights [V.IMP]</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="min-jumps">
+                        <label for="min-jumps">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1" target="_blank">10. Minimum no. of Jumps to reach end of array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="find-duplicate">
+                        <label for="find-duplicate">
+                            <a href="https://leetcode.com/problems/find-the-duplicate-number/" target="_blank">11. Find duplicate in array of N+1 Integers</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="merge-sorted">
+                        <label for="merge-sorted">
+                            <a href="https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays5135/1" target="_blank">12. Merge 2 sorted arrays without extra space</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="kadane">
+                        <label for="kadane">
+                            <a href="https://practice.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1" target="_blank">13. Kadane's Algorithm [V.V.V.V.V IMP]</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="merge-intervals">
+                        <label for="merge-intervals">
+                            <a href="https://leetcode.com/problems/merge-intervals/" target="_blank">14. Merge Intervals</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="next-permutation">
+                        <label for="next-permutation">
+                            <a href="https://leetcode.com/problems/next-permutation/" target="_blank">15. Next Permutation</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="count-inversion">
+                        <label for="count-inversion">
+                            <a href="https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1" target="_blank">16. Count Inversion</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="buy-sell-stock">
+                        <label for="buy-sell-stock">
+                            <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/" target="_blank">17. Best time to buy and Sell stock</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="pair-sum">
+                        <label for="pair-sum">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1" target="_blank">18. Find all pairs with given sum</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="common-elements">
+                        <label for="common-elements">
+                            <a href="https://practice.geeksforgeeks.org/problems/common-elements1132/1" target="_blank">19. Find common elements in 3 sorted arrays</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="rearrange-array">
+                        <label for="rearrange-array">
+                            <a href="https://practice.geeksforgeeks.org/problems/array-of-alternate-ve-and-ve-nos1401/1" target="_blank">20. Rearrange array in alternating positive & negative items</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="subarray-zero">
+                        <label for="subarray-zero">
+                            <a href="https://practice.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1" target="_blank">21. Find if there is any subarray with sum equal to 0</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="factorial-large">
+                        <label for="factorial-large">
+                            <a href="https://practice.geeksforgeeks.org/problems/factorials-of-large-numbers2508/1" target="_blank">22. Find factorial of a large number</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-product">
+                        <label for="max-product">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-product-subarray3604/1" target="_blank">23. Find maximum product subarray</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="longest-consecutive">
+                        <label for="longest-consecutive">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-consecutive-subsequence2449/1" target="_blank">24. Find longest consecutive subsequence</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="n-by-k">
+                        <label for="n-by-k">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-element-occurences/1" target="_blank">25. Elements appearing more than n/k times</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-profit-twice">
+                        <label for="max-profit-twice">
+                            <a href="https://practice.geeksforgeeks.org/problems/buy-and-sell-a-share-at-most-twice/1" target="_blank">26. Maximum profit by buying and selling a share atmost twice</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="array-subset">
+                        <label for="array-subset">
+                            <a href="https://practice.geeksforgeeks.org/problems/array-subset-of-another-array2317/1" target="_blank">27. Find whether an array is a subset of another array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="triplet-sum">
+                        <label for="triplet-sum">
+                            <a href="https://practice.geeksforgeeks.org/problems/triplet-sum-in-array-1587115621/1" target="_blank">28. Find the triplet that sum to a given value</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="trapping-water">
+                        <label for="trapping-water">
+                            <a href="https://practice.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1" target="_blank">29. Trapping Rain water problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="chocolate-distribution">
+                        <label for="chocolate-distribution">
+                            <a href="https://practice.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1" target="_blank">30. Chocolate Distribution problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="smallest-subarray">
+                        <label for="smallest-subarray">
+                            <a href="https://practice.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1" target="_blank">31. Smallest Subarray with sum greater than a given value</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="three-way-partition">
+                        <label for="three-way-partition">
+                            <a href="https://practice.geeksforgeeks.org/problems/three-way-partitioning/1" target="_blank">32. Three way partitioning of an array around a given value</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="min-swaps-k">
+                        <label for="min-swaps-k">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-swaps-required-to-bring-all-elements-less-than-or-equal-to-k-together4847/1" target="_blank">33. Minimum swaps required to bring elements less equal K together</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="palindrome-min-ops">
+                        <label for="palindrome-min-ops">
+                            <a href="https://practice.geeksforgeeks.org/problems/palindromic-array-1587115620/1" target="_blank">34. Minimum no. of operations required to make an array palindrome</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="median-equal">
+                        <label for="median-equal">
+                            <a href="https://practice.geeksforgeeks.org/problems/find-the-median0527/1" target="_blank">35. Median of 2 sorted arrays of equal size</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="median-different">
+                        <label for="median-different">
+                            <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank">36. Median of 2 sorted arrays of different size</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" data-topic="Matrix">
+                <h2>
+                    <div class="title-section">
+                        <span>Matrix</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/10)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="spiral-matrix">
+                        <label for="spiral-matrix">
+                            <a href="https://practice.geeksforgeeks.org/problems/spirally-traversing-a-matrix-1587115621/1" target="_blank">1. Spiral traversal on a Matrix</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="search-matrix">
+                        <label for="search-matrix">
+                            <a href="https://practice.geeksforgeeks.org/problems/search-in-a-matrix17201/1" target="_blank">2. Search an element in a Matrix</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="median-matrix">
+                        <label for="median-matrix">
+                            <a href="https://practice.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1" target="_blank">3. Find median in a row wise sorted matrix</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="row-sorted-matrix">
+                        <label for="row-sorted-matrix">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-no-of-1s-row0094/1" target="_blank">4. Find row with maximum no. of 1's</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="print-sorted-matrix">
+                        <label for="print-sorted-matrix">
+                            <a href="https://practice.geeksforgeeks.org/problems/sorted-matrix2333/1" target="_blank">5. Print elements in sorted order using row-column wise sorted matrix</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-rectangle">
+                        <label for="max-rectangle">
+                            <a href="https://practice.geeksforgeeks.org/problems/max-rectangle/1" target="_blank">6. Maximum size rectangle</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="specific-pair">
+                        <label for="specific-pair">
+                            <a href="https://practice.geeksforgeeks.org/problems/find-specific-pair-in-matrix/1" target="_blank">7. Find a specific pair in matrix</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="kth-smallest-matrix">
+                        <label for="kth-smallest-matrix">
+                            <a href="https://practice.geeksforgeeks.org/problems/kth-element-in-matrix/1" target="_blank">8. Kth smallest element in a row-column wise sorted matrix</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="common-elements-matrix">
+                        <label for="common-elements-matrix">
+                            <a href="https://practice.geeksforgeeks.org/problems/common-elements1132/1" target="_blank">9. Common elements in all rows of a given matrix</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="rotate-matrix">
+                        <label for="rotate-matrix">
+                            <a href="https://practice.geeksforgeeks.org/problems/rotate-by-90-degree-1587115621/1" target="_blank">10. Rotate matrix by 90 degrees</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" data-topic="Strings">
+                <h2>
+                    <div class="title-section">
+                        <span>Strings</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/43)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="reverse-string">
+                        <label for="reverse-string">
+                            <a href="https://leetcode.com/problems/reverse-string/" target="_blank">1. Reverse a String</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="check-palindrome">
+                        <label for="check-palindrome">
+                            <a href="https://practice.geeksforgeeks.org/problems/palindrome-string0817/1" target="_blank">2. Check whether a String is Palindrome or not</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="duplicate-characters">
+                        <label for="duplicate-characters">
+                            <a href="https://practice.geeksforgeeks.org/problems/remove-duplicates3034/1" target="_blank">3. Find Duplicate characters in a string</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="anagram">
+                        <label for="anagram">
+                            <a href="https://practice.geeksforgeeks.org/problems/anagram-1587115620/1" target="_blank">4. Why Strings are immutable in Java?</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="anagram-check">
+                        <label for="anagram-check">
+                            <a href="https://practice.geeksforgeeks.org/problems/anagram-1587115620/1" target="_blank">5. Write a Code to check whether one string is a rotation of another</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="anagram-strings">
+                        <label for="anagram-strings">
+                            <a href="https://practice.geeksforgeeks.org/problems/anagram-1587115620/1" target="_blank">6. Write a Program to check whether a string is a valid shuffle of two strings or not</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="count-say">
+                        <label for="count-say">
+                            <a href="https://leetcode.com/problems/count-and-say/" target="_blank">7. Count and Say problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="longest-palindrome">
+                        <label for="longest-palindrome">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1" target="_blank">8. Write a program to find the longest Palindrome in a string</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="longest-substring">
+                        <label for="longest-substring">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-distinct-characters-in-string5848/1" target="_blank">9. Find Longest Recurring Subsequence in String</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="print-subsequences">
+                        <label for="print-subsequences">
+                            <a href="https://practice.geeksforgeeks.org/problems/print-all-subsequences-of-a-string/1" target="_blank">10. Print all Subsequences of a string</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="print-permutations">
+                        <label for="print-permutations">
+                            <a href="https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1" target="_blank">11. Print all the permutations of the given string</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="split-binary">
+                        <label for="split-binary">
+                            <a href="https://practice.geeksforgeeks.org/problems/split-the-binary-string-into-substrings-with-equal-number-of-0s-and-1s/1" target="_blank">12. Split the Binary string into two substring with equal 0's and 1's</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="word-wrap">
+                        <label for="word-wrap">
+                            <a href="https://practice.geeksforgeeks.org/problems/word-wrap1646/1" target="_blank">13. Word Wrap Problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="edit-distance">
+                        <label for="edit-distance">
+                            <a href="https://practice.geeksforgeeks.org/problems/edit-distance3702/1" target="_blank">14. EDIT Distance</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="next-greater">
+                        <label for="next-greater">
+                            <a href="https://practice.geeksforgeeks.org/problems/next-permutation5226/1" target="_blank">15. Next Permutation</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="balanced-parentheses">
+                        <label for="balanced-parentheses">
+                            <a href="https://practice.geeksforgeeks.org/problems/parenthesis-checker2744/1" target="_blank">16. Balanced Parenthesis problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="word-break">
+                        <label for="word-break">
+                            <a href="https://practice.geeksforgeeks.org/problems/word-break1352/1" target="_blank">17. Word break Problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="rabin-karp">
+                        <label for="rabin-karp">
+                            <a href="https://practice.geeksforgeeks.org/problems/rabin-karp-pattern-searching/1" target="_blank">18. Rabin Karp Algorithm</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="kmp-algorithm">
+                        <label for="kmp-algorithm">
+                            <a href="https://practice.geeksforgeeks.org/problems/search-pattern0205/1" target="_blank">19. KMP Algorithm</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="convert-sentence">
+                        <label for="convert-sentence">
+                            <a href="https://practice.geeksforgeeks.org/problems/convert-a-sentence-into-its-equivalent-mobile-numeric-keypad-sequence0547/1" target="_blank">20. Convert a Sentence into its equivalent mobile numeric keypad sequence</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bracket-reversals">
+                        <label for="bracket-reversals">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-the-reversals0401/1" target="_blank">21. Minimum number of bracket reversals needed to make an expression balanced</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="palindromic-subsequence">
+                        <label for="palindromic-subsequence">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1" target="_blank">22. Count All Palindromic Subsequence in a given String</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="count-string-2d">
+                        <label for="count-string-2d">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-of-number-of-given-string-in-2d-character-array/1" target="_blank">23. Count of number of given string in 2D character array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="search-word-2d">
+                        <label for="search-word-2d">
+                            <a href="https://practice.geeksforgeeks.org/problems/search-a-word-in-a-2d-grid-of-characters/1" target="_blank">24. Search a Word in a 2D Grid of characters</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="boyer-moore">
+                        <label for="boyer-moore">
+                            <a href="https://practice.geeksforgeeks.org/problems/boyer-moore-algorithm-pattern-searching/1" target="_blank">25. Boyer Moore Algorithm for Pattern Searching</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="roman-numerals">
+                        <label for="roman-numerals">
+                            <a href="https://practice.geeksforgeeks.org/problems/roman-number-to-integer3201/1" target="_blank">26. Converting Roman Numerals to Decimal</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="longest-common-prefix">
+                        <label for="longest-common-prefix">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-common-prefix-in-an-array5129/1" target="_blank">27. Longest Common Prefix</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="binary-flips">
+                        <label for="binary-flips">
+                            <a href="https://practice.geeksforgeeks.org/problems/min-number-of-flips3210/1" target="_blank">28. Number of flips to make binary string alternate</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="first-repeated-word">
+                        <label for="first-repeated-word">
+                            <a href="https://practice.geeksforgeeks.org/problems/first-repeated-word-in-a-string/1" target="_blank">29. Find the first repeated word in string</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bracket-balancing">
+                        <label for="bracket-balancing">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1" target="_blank">30. Minimum number of swaps for bracket balancing</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="longest-common-subsequence">
+                        <label for="longest-common-subsequence">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1" target="_blank">31. Find the longest common subsequence between two strings</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="valid-ip">
+                        <label for="valid-ip">
+                            <a href="https://practice.geeksforgeeks.org/problems/generate-ip-addresses/1" target="_blank">32. Program to generate all possible valid IP addresses from given string</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="smallest-window">
+                        <label for="smallest-window">
+                            <a href="https://practice.geeksforgeeks.org/problems/smallest-window-in-a-string-containing-all-the-characters-of-another-string-1587115621/1" target="_blank">33. Write a program to find the smallest window that contains all characters of string itself</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="rearrange-characters">
+                        <label for="rearrange-characters">
+                            <a href="https://practice.geeksforgeeks.org/problems/rearrange-characters4649/1" target="_blank">34. Rearrange characters in a string such that no two adjacent are same</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="make-palindrome">
+                        <label for="make-palindrome">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-characters-to-be-added-at-front-to-make-string-palindrome/1" target="_blank">35. Minimum characters to be added at front to make string palindrome</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="print-anagrams">
+                        <label for="print-anagrams">
+                            <a href="https://practice.geeksforgeeks.org/problems/print-anagrams-together/1" target="_blank">36. Given a sequence of words, print all anagrams together</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="smallest-window-string">
+                        <label for="smallest-window-string">
+                            <a href="https://practice.geeksforgeeks.org/problems/smallest-window-in-a-string-containing-all-the-characters-of-another-string-1587115621/1" target="_blank">37. Find the smallest window in a string containing all characters of another string</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="remove-adjacent">
+                        <label for="remove-adjacent">
+                            <a href="https://practice.geeksforgeeks.org/problems/remove-all-duplicate-adjacent-characters-from-a-string/1" target="_blank">38. Recursively remove all adjacent duplicates</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="wildcard-matching">
+                        <label for="wildcard-matching">
+                            <a href="https://practice.geeksforgeeks.org/problems/wildcard-string-matching1126/1" target="_blank">39. String matching where one string contains wildcard characters</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="computer-customers">
+                        <label for="computer-customers">
+                            <a href="https://practice.geeksforgeeks.org/problems/computer-customers/1" target="_blank">40. Function to find Number of customers who could not get a computer</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="transform-string">
+                        <label for="transform-string">
+                            <a href="https://practice.geeksforgeeks.org/problems/transform-string/1" target="_blank">41. Transform One String to Another using Minimum Number of Given Operation</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="isomorphic-strings">
+                        <label for="isomorphic-strings">
+                            <a href="https://practice.geeksforgeeks.org/problems/isomorphic-strings-1587115620/1" target="_blank">42. Check if two given strings are isomorphic to each other</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="print-sentences">
+                        <label for="print-sentences">
+                            <a href="https://practice.geeksforgeeks.org/problems/print-all-sentences-that-can-be-formed-from-list-of-word-lists/1" target="_blank">43. Recursively print all sentences that can be formed from list of word lists</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" data-topic="Searching & Sorting">
+                <h2>
+                    <div class="title-section">
+                        <span>Searching & Sorting</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/36)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="binary-search">
+                        <label for="binary-search">
+                            <a href="https://practice.geeksforgeeks.org/problems/binary-search-1587115620/1" target="_blank">1. Binary Search</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bubble-sort">
+                        <label for="bubble-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/bubble-sort/1" target="_blank">2. Bubble Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="insertion-sort">
+                        <label for="insertion-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/insertion-sort/1" target="_blank">3. Insertion Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="selection-sort">
+                        <label for="selection-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/selection-sort/1" target="_blank">4. Selection Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="merge-sort">
+                        <label for="merge-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/merge-sort/1" target="_blank">5. Merge Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="quick-sort">
+                        <label for="quick-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/quick-sort/1" target="_blank">6. Quick Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="heap-sort">
+                        <label for="heap-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/heap-sort/1" target="_blank">7. Heap Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="counting-sort">
+                        <label for="counting-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/counting-sort/1" target="_blank">8. Counting Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="radix-sort">
+                        <label for="radix-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/radix-sort/1" target="_blank">9. Radix Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bucket-sort">
+                        <label for="bucket-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/bucket-sort/1" target="_blank">10. Bucket Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shell-sort">
+                        <label for="shell-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/shell-sort/1" target="_blank">11. Shell Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="tim-sort">
+                        <label for="tim-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/tim-sort/1" target="_blank">12. Tim Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="comb-sort">
+                        <label for="comb-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/comb-sort/1" target="_blank">13. Comb Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="pigeonhole-sort">
+                        <label for="pigeonhole-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/pigeonhole-sort/1" target="_blank">14. Pigeonhole Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="cycle-sort">
+                        <label for="cycle-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/cycle-sort/1" target="_blank">15. Cycle Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="cocktail-sort">
+                        <label for="cocktail-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/cocktail-sort/1" target="_blank">16. Cocktail Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="strand-sort">
+                        <label for="strand-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/strand-sort/1" target="_blank">17. Strand Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bitonic-sort">
+                        <label for="bitonic-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/bitonic-sort/1" target="_blank">18. Bitonic Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="pancake-sort">
+                        <label for="pancake-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/pancake-sort/1" target="_blank">19. Pancake Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="binary-insertion-sort">
+                        <label for="binary-insertion-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/binary-insertion-sort/1" target="_blank">20. Binary Insertion Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="gnome-sort">
+                        <label for="gnome-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/gnome-sort/1" target="_blank">21. Gnome Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stooge-sort">
+                        <label for="stooge-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/stooge-sort/1" target="_blank">22. Stooge Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bogo-sort">
+                        <label for="bogo-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/bogo-sort/1" target="_blank">23. Bogo Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="binary-tree-sort">
+                        <label for="binary-tree-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/binary-tree-sort/1" target="_blank">24. Binary Tree Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="odd-even-sort">
+                        <label for="odd-even-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/odd-even-sort/1" target="_blank">25. Odd-Even Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="3-way-quicksort">
+                        <label for="3-way-quicksort">
+                            <a href="https://practice.geeksforgeeks.org/problems/3-way-quicksort/1" target="_blank">26. 3-Way QuickSort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="comparison-sorting">
+                        <label for="comparison-sorting">
+                            <a href="https://practice.geeksforgeeks.org/problems/comparison-sorting/1" target="_blank">27. Comparison of Sorting Algorithms</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stability-sorting">
+                        <label for="stability-sorting">
+                            <a href="https://practice.geeksforgeeks.org/problems/stability-in-sorting-algorithms/1" target="_blank">28. Stability in Sorting Algorithms</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="in-place-sorting">
+                        <label for="in-place-sorting">
+                            <a href="https://practice.geeksforgeeks.org/problems/in-place-sorting/1" target="_blank">29. In-Place Sorting</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="external-sorting">
+                        <label for="external-sorting">
+                            <a href="https://practice.geeksforgeeks.org/problems/external-sorting/1" target="_blank">30. External Sorting</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="online-sorting">
+                        <label for="online-sorting">
+                            <a href="https://practice.geeksforgeeks.org/problems/online-sorting/1" target="_blank">31. Online Sorting</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="offline-sorting">
+                        <label for="offline-sorting">
+                            <a href="https://practice.geeksforgeeks.org/problems/offline-sorting/1" target="_blank">32. Offline Sorting</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="adaptive-sorting">
+                        <label for="adaptive-sorting">
+                            <a href="https://practice.geeksforgeeks.org/problems/adaptive-sorting/1" target="_blank">33. Adaptive Sorting</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" data-topic="Binary Trees">
+                <h2>
+                    <div class="title-section">
+                        <span>Binary Trees</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/35)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="level-order-traversal">
+                        <label for="level-order-traversal">
+                            <a href="https://practice.geeksforgeeks.org/problems/level-order-traversal/1" target="_blank">1. Level order traversal</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="reverse-level-order">
+                        <label for="reverse-level-order">
+                            <a href="https://practice.geeksforgeeks.org/problems/reverse-level-order-traversal/1" target="_blank">2. Reverse Level Order traversal</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="height-of-tree">
+                        <label for="height-of-tree">
+                            <a href="https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1" target="_blank">3. Height of a tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="diameter-of-tree">
+                        <label for="diameter-of-tree">
+                            <a href="https://practice.geeksforgeeks.org/problems/diameter-of-binary-tree/1" target="_blank">4. Diameter of a tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="mirror-of-tree">
+                        <label for="mirror-of-tree">
+                            <a href="https://practice.geeksforgeeks.org/problems/mirror-tree/1" target="_blank">5. Mirror of a tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="inorder-traversal">
+                        <label for="inorder-traversal">
+                            <a href="https://practice.geeksforgeeks.org/problems/inorder-traversal/1" target="_blank">6. Inorder Traversal of a tree both using recursion and Iteration</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="preorder-traversal">
+                        <label for="preorder-traversal">
+                            <a href="https://practice.geeksforgeeks.org/problems/preorder-traversal/1" target="_blank">7. Preorder Traversal of a tree both using recursion and Iteration</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="postorder-traversal">
+                        <label for="postorder-traversal">
+                            <a href="https://practice.geeksforgeeks.org/problems/postorder-traversal/1" target="_blank">8. Postorder Traversal of a tree both using recursion and Iteration</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="left-view">
+                        <label for="left-view">
+                            <a href="https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1" target="_blank">9. Left View of a tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="right-view">
+                        <label for="right-view">
+                            <a href="https://practice.geeksforgeeks.org/problems/right-view-of-binary-tree/1" target="_blank">10. Right View of Tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="top-view">
+                        <label for="top-view">
+                            <a href="https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1" target="_blank">11. Top View of a tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bottom-view">
+                        <label for="bottom-view">
+                            <a href="https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1" target="_blank">12. Bottom View of a tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="zigzag-traversal">
+                        <label for="zigzag-traversal">
+                            <a href="https://practice.geeksforgeeks.org/problems/zigzag-tree-traversal/1" target="_blank">13. Zig-Zag traversal of a binary tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="check-balanced">
+                        <label for="check-balanced">
+                            <a href="https://practice.geeksforgeeks.org/problems/check-for-balanced-tree/1" target="_blank">14. Check if a tree is balanced or not</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="diagonal-traversal">
+                        <label for="diagonal-traversal">
+                            <a href="https://practice.geeksforgeeks.org/problems/diagonal-traversal-of-binary-tree/1" target="_blank">15. Diagonal Traversal of a tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="boundary-traversal">
+                        <label for="boundary-traversal">
+                            <a href="https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1" target="_blank">16. Boundary traversal of a Binary tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="construct-tree">
+                        <label for="construct-tree">
+                            <a href="https://practice.geeksforgeeks.org/problems/construct-tree-1/1" target="_blank">17. Construct Binary Tree from String with Bracket Representation</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="convert-binary-tree">
+                        <label for="convert-binary-tree">
+                            <a href="https://practice.geeksforgeeks.org/problems/convert-to-mirror/1" target="_blank">18. Convert Binary tree into Doubly Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="convert-sorted-dll">
+                        <label for="convert-sorted-dll">
+                            <a href="https://practice.geeksforgeeks.org/problems/sorted-dll-to-balanced-bst/1" target="_blank">19. Convert Binary tree into Sum tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="construct-bst">
+                        <label for="construct-bst">
+                            <a href="https://practice.geeksforgeeks.org/problems/construct-bst-from-post-order/1" target="_blank">20. Construct BST from given preorder traversal</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="minimum-swap-bst">
+                        <label for="minimum-swap-bst">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-swap-required-to-convert-binary-tree-to-binary-search-tree/1" target="_blank">21. Minimum swap required to convert binary tree to binary search tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="check-subtree">
+                        <label for="check-subtree">
+                            <a href="https://practice.geeksforgeeks.org/problems/check-if-subtree/1" target="_blank">22. Check if Binary tree is Sum tree or not</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="check-duplicate-subtree">
+                        <label for="check-duplicate-subtree">
+                            <a href="https://practice.geeksforgeeks.org/problems/duplicate-subtree-in-binary-tree/1" target="_blank">23. Check if all leaf nodes are at same level or not</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="check-symmetric">
+                        <label for="check-symmetric">
+                            <a href="https://practice.geeksforgeeks.org/problems/symmetric-tree/1" target="_blank">24. Check if a Binary Tree contains duplicate subtrees of size 2 or more [ IMP ]</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="check-mirror">
+                        <label for="check-mirror">
+                            <a href="https://practice.geeksforgeeks.org/problems/check-mirror-in-n-ary-tree1528/1" target="_blank">25. Check Mirror in N-ary tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="sum-of-k-smallest">
+                        <label for="sum-of-k-smallest">
+                            <a href="https://practice.geeksforgeeks.org/problems/sum-of-k-smallest-elements-in-bst3029/1" target="_blank">26. Sum of Nodes on the Longest path from root to leaf nodes</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="check-if-leaf-level">
+                        <label for="check-if-leaf-level">
+                            <a href="https://practice.geeksforgeeks.org/problems/leaf-at-same-level/1" target="_blank">27. Check if given graph is tree or not</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="largest-subtree-sum">
+                        <label for="largest-subtree-sum">
+                            <a href="https://practice.geeksforgeeks.org/problems/largest-subtree-sum-in-a-tree/1" target="_blank">28. Find Largest subtree sum in a tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="maximum-sum-leaf">
+                        <label for="maximum-sum-leaf">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-leaf-to-root-path/1" target="_blank">29. Maximum Sum of nodes in Binary tree such that no two are adjacent</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="print-all-k-sum">
+                        <label for="print-all-k-sum">
+                            <a href="https://practice.geeksforgeeks.org/problems/print-all-k-sum-paths-in-binary-tree/1" target="_blank">30. Print all "K" Sum paths in a Binary tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="lowest-common-ancestor">
+                        <label for="lowest-common-ancestor">
+                            <a href="https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1" target="_blank">31. Find LCA in a Binary tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="find-distance">
+                        <label for="find-distance">
+                            <a href="https://practice.geeksforgeeks.org/problems/min-distance-between-two-given-nodes-of-a-binary-tree/1" target="_blank">32. Find distance between 2 nodes in a Binary tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="kth-ancestor">
+                        <label for="kth-ancestor">
+                            <a href="https://practice.geeksforgeeks.org/problems/kth-ancestor-in-a-tree/1" target="_blank">33. Kth Ancestor of node in a Binary tree</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="find-all-duplicate">
+                        <label for="find-all-duplicate">
+                            <a href="https://practice.geeksforgeeks.org/problems/duplicate-subtree-in-binary-tree/1" target="_blank">34. Find all Duplicate subtrees in a Binary tree</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" data-topic="Binary Search Trees">
+                <h2>
+                    <div class="title-section">
+                        <span>Binary Search Trees</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/22)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="implement-stack">
+                        <label for="implement-stack">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1" target="_blank">1. Implement Stack from Scratch</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="implement-queue">
+                        <label for="implement-queue">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1" target="_blank">2. Implement Queue from Scratch</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="implement-2-stacks">
+                        <label for="implement-2-stacks">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-two-stacks-in-an-array/1" target="_blank">3. Implement 2 stack in an array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="balanced-parentheses">
+                        <label for="balanced-parentheses">
+                            <a href="https://practice.geeksforgeeks.org/problems/parenthesis-checker2744/1" target="_blank">4. Find the middle element of a stack</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="implement-n-stacks">
+                        <label for="implement-n-stacks">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-n-stack-in-an-array/1" target="_blank">5. Implement "N" stacks in an Array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="special-stack">
+                        <label for="special-stack">
+                            <a href="https://practice.geeksforgeeks.org/problems/special-stack/1" target="_blank">6. Check the expression has valid or Balanced parenthesis or not</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="reverse-queue">
+                        <label for="reverse-queue">
+                            <a href="https://practice.geeksforgeeks.org/problems/queue-reversal/1" target="_blank">7. Reverse a String using Stack</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="design-stack">
+                        <label for="design-stack">
+                            <a href="https://practice.geeksforgeeks.org/problems/design-a-stack-with-find-middle-operation/1" target="_blank">8. Design a Stack that supports getMin() in O(1) time and O(1) extra space</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="next-greater">
+                        <label for="next-greater">
+                            <a href="https://practice.geeksforgeeks.org/problems/next-larger-element-1587115620/1" target="_blank">9. Find the next Greater element</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="baseball-game">
+                        <label for="baseball-game">
+                            <a href="https://practice.geeksforgeeks.org/problems/baseball-game/1" target="_blank">10. The celebrity Problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="arithmetic-expression">
+                        <label for="arithmetic-expression">
+                            <a href="https://practice.geeksforgeeks.org/problems/evaluation-of-postfix-expression1735/1" target="_blank">11. Arithmetic Expression evaluation</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="evaluation-postfix">
+                        <label for="evaluation-postfix">
+                            <a href="https://practice.geeksforgeeks.org/problems/evaluation-of-postfix-expression1735/1" target="_blank">12. Evaluation of Postfix expression</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="implement-deque">
+                        <label for="implement-deque">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-deque-using-doubly-linked-list/1" target="_blank">13. Implement a method to insert an element at its bottom without using any other data structure</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="reverse-first-k">
+                        <label for="reverse-first-k">
+                            <a href="https://practice.geeksforgeeks.org/problems/reverse-first-k-elements-of-queue/1" target="_blank">14. Reverse a number using stack</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="sort-stack">
+                        <label for="sort-stack">
+                            <a href="https://practice.geeksforgeeks.org/problems/sort-a-stack/1" target="_blank">15. Sort a Stack using recursion</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="queue-using-stacks">
+                        <label for="queue-using-stacks">
+                            <a href="https://practice.geeksforgeeks.org/problems/queue-using-two-stacks/1" target="_blank">16. Queue using 2 Stacks</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stack-using-queues">
+                        <label for="stack-using-queues">
+                            <a href="https://practice.geeksforgeeks.org/problems/stack-using-two-queues/1" target="_blank">17. Stack using 2 queues</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stack-permutation">
+                        <label for="stack-permutation">
+                            <a href="https://practice.geeksforgeeks.org/problems/stack-permutations/1" target="_blank">18. Stack Permutations (Check if an array is stack permutation of other)</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="queue-reversal">
+                        <label for="queue-reversal">
+                            <a href="https://practice.geeksforgeeks.org/problems/queue-reversal/1" target="_blank">19. Queue Reversal</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="reverse-first-k-queue">
+                        <label for="reverse-first-k-queue">
+                            <a href="https://practice.geeksforgeeks.org/problems/reverse-first-k-elements-of-queue/1" target="_blank">20. Reversing the first K elements of a Queue</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="interleave-first-half">
+                        <label for="interleave-first-half">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleave-the-first-half-of-the-queue-with-second-half/1" target="_blank">21. Interleave the first half of the queue with second half</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="circular-tour">
+                        <label for="circular-tour">
+                            <a href="https://practice.geeksforgeeks.org/problems/circular-tour-1587115620/1" target="_blank">22. Circular tour</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="sliding-window">
+                        <label for="sliding-window">
+                            <a href="https://practice.geeksforgeeks.org/problems/sliding-window-maximum/1" target="_blank">23. Sliding Window maximum</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="k-queue">
+                        <label for="k-queue">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-k-queues-in-an-array/1" target="_blank">24. K Queues in a single array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="sum-min-max">
+                        <label for="sum-min-max">
+                            <a href="https://practice.geeksforgeeks.org/problems/sum-of-minimum-and-maximum-elements-of-all-subarrays-of-size-k/1" target="_blank">25. Sum of minimum and maximum elements of all subarrays of size k</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="lru-cache">
+                        <label for="lru-cache">
+                            <a href="https://practice.geeksforgeeks.org/problems/lru-cache/1" target="_blank">26. LRU Cache Implementation</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="circular-queue">
+                        <label for="circular-queue">
+                            <a href="https://practice.geeksforgeeks.org/problems/circular-queue/1" target="_blank">27. Circular Queue Implementation</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="deque">
+                        <label for="deque">
+                            <a href="https://practice.geeksforgeeks.org/problems/deque-implementations/1" target="_blank">28. Deque Implementation</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stack-using-deque">
+                        <label for="stack-using-deque">
+                            <a href="https://practice.geeksforgeeks.org/problems/stack-using-deque/1" target="_blank">29. Stack using Deque</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="queue-using-deque">
+                        <label for="queue-using-deque">
+                            <a href="https://practice.geeksforgeeks.org/problems/queue-using-deque/1" target="_blank">30. Queue using Deque</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stack-using-ll">
+                        <label for="stack-using-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-stack-using-linked-list/1" target="_blank">31. Stack using Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="queue-using-ll">
+                        <label for="queue-using-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-queue-using-linked-list/1" target="_blank">32. Queue using Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stack-using-array">
+                        <label for="stack-using-array">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1" target="_blank">33. Stack using Array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="queue-using-array">
+                        <label for="queue-using-array">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1" target="_blank">34. Queue using Array</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stack-using-queues-2">
+                        <label for="stack-using-queues-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/stack-using-two-queues/1" target="_blank">35. Stack using Queues</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="queue-using-stacks-2">
+                        <label for="queue-using-stacks-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/queue-using-two-stacks/1" target="_blank">36. Queue using Stacks</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stack-using-deque-2">
+                        <label for="stack-using-deque-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/stack-using-deque/1" target="_blank">37. Stack using Deque</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="queue-using-deque-2">
+                        <label for="queue-using-deque-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/queue-using-deque/1" target="_blank">38. Queue using Deque</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="stack-using-ll-2">
+                        <label for="stack-using-ll-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-stack-using-linked-list/1" target="_blank">39. Stack using Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="queue-using-ll-2">
+                        <label for="queue-using-ll-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/implement-queue-using-linked-list/1" target="_blank">40. Queue using Linked List</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" data-topic="Greedy">
+                <h2>
+                    <div class="title-section">
+                        <span>Greedy</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/15)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="activity-selection">
+                        <label for="activity-selection">
+                            <a href="https://practice.geeksforgeeks.org/problems/activity-selection-1587115620/1" target="_blank">1. Activity Selection</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="job-sequencing">
+                        <label for="job-sequencing">
+                            <a href="https://practice.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1" target="_blank">2. Job Sequencing Problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="huffman-coding">
+                        <label for="huffman-coding">
+                            <a href="https://practice.geeksforgeeks.org/problems/huffman-coding-3/1" target="_blank">3. Huffman Coding</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="fractional-knapsack">
+                        <label for="fractional-knapsack">
+                            <a href="https://practice.geeksforgeeks.org/problems/fractional-knapsack/0" target="_blank">4. Fractional Knapsack</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="n-meetings-in-one-room">
+                        <label for="n-meetings-in-one-room">
+                            <a href="https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0" target="_blank">5. N meetings in one room</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="minimum-platforms">
+                        <label for="minimum-platforms">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-platforms/0" target="_blank">6. Minimum Platforms</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="minimum-cost-to-cut-board">
+                        <label for="minimum-cost-to-cut-board">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-cost-to-cut-a-board-into-squares/0" target="_blank">7. Minimum Cost to cut a board into squares</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="maximum-product-subset">
+                        <label for="maximum-product-subset">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-product-subset-of-size-two/0" target="_blank">8. Maximum Product Subset of size two</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-sum-subsequence">
+                        <label for="max-sum-subsequence">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-increasing-subsequence/0" target="_blank">9. Maximum Sum Increasing Subsequence</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-sum-subarray">
+                        <label for="max-sum-subarray">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-subarray/0" target="_blank">10. Maximum Sum Subarray</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-sum-subsequence-circular">
+                        <label for="max-sum-subsequence-circular">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-circular-subarray/0" target="_blank">11. Maximum Sum Circular Subarray</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-sum-subsequence-k">
+                        <label for="max-sum-subsequence-k">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-subarray-of-size-k/0" target="_blank">12. Maximum Sum Subarray of size K</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-sum-subsequence-k-circular">
+                        <label for="max-sum-subsequence-k-circular">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-subarray-of-size-k-circular/0" target="_blank">13. Maximum Sum Subarray of size K (Circular)</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-sum-subsequence-k-non-circular">
+                        <label for="max-sum-subsequence-k-non-circular">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-subarray-of-size-k-non-circular/0" target="_blank">14. Maximum Sum Subarray of size K (Non-Circular)</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="max-sum-subsequence-k-circular-non-circular">
+                        <label for="max-sum-subsequence-k-circular-non-circular">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-subarray-of-size-k-circular-non-circular/0" target="_blank">15. Maximum Sum Subarray of size K (Circular and Non-Circular)</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" id="graph">
+                <h2>
+                    <div class="title-section">
+                        <span>Graph</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/44)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="dfs">
+                        <label for="dfs">
+                            <a href="https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1" target="_blank">1. DFS of Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bfs">
+                        <label for="bfs">
+                            <a href="https://practice.geeksforgeeks.org/problems/bfs-traversal-of-graph/1" target="_blank">2. BFS of Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="detect-cycle">
+                        <label for="detect-cycle">
+                            <a href="https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1" target="_blank">3. Detect Cycle in an Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="detect-cycle-directed">
+                        <label for="detect-cycle-directed">
+                            <a href="https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1" target="_blank">4. Detect Cycle in a Directed Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="topological-sort">
+                        <label for="topological-sort">
+                            <a href="https://practice.geeksforgeeks.org/problems/topological-sort/1" target="_blank">5. Topological Sort</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path">
+                        <label for="shortest-path">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">6. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-directed">
+                        <label for="shortest-path-directed">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-directed-acyclic-graph/1" target="_blank">7. Shortest Path in Directed Acyclic Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dijkstra">
+                        <label for="dijkstra">
+                            <a href="https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1" target="_blank">8. Dijkstra's Algorithm</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bellman-ford">
+                        <label for="bellman-ford">
+                            <a href="https://practice.geeksforgeeks.org/problems/negative-weight-cycle3504/1" target="_blank">9. Bellman Ford Algorithm</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="floyd-warshall">
+                        <label for="floyd-warshall">
+                            <a href="https://practice.geeksforgeeks.org/problems/floyd-warshall/1" target="_blank">10. Floyd Warshall Algorithm</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="prims-algorithm">
+                        <label for="prims-algorithm">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1" target="_blank">11. Prims Algorithm</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="kruskals-algorithm">
+                        <label for="kruskals-algorithm">
+                            <a href="https://practice.geeksforgeeks.org/problems/kruskals-algorithm/1" target="_blank">12. Kruskals Algorithm</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dijkstra-bidirectional">
+                        <label for="dijkstra-bidirectional">
+                            <a href="https://practice.geeksforgeeks.org/problems/dijkstras-algorithm-for-directed-graph/1" target="_blank">13. Dijkstra's Algorithm for Directed Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bellman-ford-bidirectional">
+                        <label for="bellman-ford-bidirectional">
+                            <a href="https://practice.geeksforgeeks.org/problems/bellman-ford-algorithm-for-directed-graph/1" target="_blank">14. Bellman Ford Algorithm for Directed Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="floyd-warshall-bidirectional">
+                        <label for="floyd-warshall-bidirectional">
+                            <a href="https://practice.geeksforgeeks.org/problems/floyd-warshall-algorithm-for-directed-graph/1" target="_blank">15. Floyd Warshall Algorithm for Directed Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="articulation-points">
+                        <label for="articulation-points">
+                            <a href="https://practice.geeksforgeeks.org/problems/articulation-points/1" target="_blank">16. Articulation Points</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bridges-in-graph">
+                        <label for="bridges-in-graph">
+                            <a href="https://practice.geeksforgeeks.org/problems/bridge-edge-in-graph/1" target="_blank">17. Bridges in Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="strongly-connected-components">
+                        <label for="strongly-connected-components">
+                            <a href="https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosaraju/1" target="_blank">18. Strongly Connected Components</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bipartite-graph">
+                        <label for="bipartite-graph">
+                            <a href="https://practice.geeksforgeeks.org/problems/bipartite-graph/1" target="_blank">19. Bipartite Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="topological-sort-dag">
+                        <label for="topological-sort-dag">
+                            <a href="https://practice.geeksforgeeks.org/problems/topological-sort/1" target="_blank">20. Topological Sort (DAG)</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-dag">
+                        <label for="shortest-path-dag">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">21. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-directed-dag">
+                        <label for="shortest-path-directed-dag">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-directed-acyclic-graph/1" target="_blank">22. Shortest Path in Directed Acyclic Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional">
+                        <label for="shortest-path-bidirectional">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">23. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag">
+                        <label for="shortest-path-bidirectional-dag">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">24. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-2">
+                        <label for="shortest-path-bidirectional-dag-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">25. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-3">
+                        <label for="shortest-path-bidirectional-dag-3">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">26. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-4">
+                        <label for="shortest-path-bidirectional-dag-4">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">27. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-5">
+                        <label for="shortest-path-bidirectional-dag-5">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">28. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-6">
+                        <label for="shortest-path-bidirectional-dag-6">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">29. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-7">
+                        <label for="shortest-path-bidirectional-dag-7">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">30. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-8">
+                        <label for="shortest-path-bidirectional-dag-8">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">31. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-9">
+                        <label for="shortest-path-bidirectional-dag-9">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">32. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-10">
+                        <label for="shortest-path-bidirectional-dag-10">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">33. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-11">
+                        <label for="shortest-path-bidirectional-dag-11">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">34. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-12">
+                        <label for="shortest-path-bidirectional-dag-12">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">35. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-13">
+                        <label for="shortest-path-bidirectional-dag-13">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">36. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-14">
+                        <label for="shortest-path-bidirectional-dag-14">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">37. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-15">
+                        <label for="shortest-path-bidirectional-dag-15">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">38. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-16">
+                        <label for="shortest-path-bidirectional-dag-16">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">39. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-17">
+                        <label for="shortest-path-bidirectional-dag-17">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">40. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-18">
+                        <label for="shortest-path-bidirectional-dag-18">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">41. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-19">
+                        <label for="shortest-path-bidirectional-dag-19">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">42. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-20">
+                        <label for="shortest-path-bidirectional-dag-20">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">43. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="shortest-path-bidirectional-dag-21">
+                        <label for="shortest-path-bidirectional-dag-21">
+                            <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" target="_blank">44. Shortest Path in Undirected Graph</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" id="dynamic-programming">
+                <h2>
+                    <div class="title-section">
+                        <span>Dynamic Programming</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/60)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="dp-fibonacci">
+                        <label for="dp-fibonacci">
+                            <a href="https://practice.geeksforgeeks.org/problems/nth-fibonacci-number1335/1" target="_blank">1. Nth Fibonacci Number</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-climb-stairs">
+                        <label for="dp-climb-stairs">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair-1587115620/1" target="_blank">2. Climb Stairs</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-frog-jump">
+                        <label for="dp-frog-jump">
+                            <a href="https://practice.geeksforgeeks.org/problems/frog-jump-1587115620/1" target="_blank">3. Frog Jump</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-house-robber">
+                        <label for="dp-house-robber">
+                            <a href="https://practice.geeksforgeeks.org/problems/stickler-theif-1587115621/1" target="_blank">4. House Robber</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-house-robber-2">
+                        <label for="dp-house-robber-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/house-robber-ii/1" target="_blank">5. House Robber II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-house-robber-3">
+                        <label for="dp-house-robber-3">
+                            <a href="https://practice.geeksforgeeks.org/problems/house-robber-iii/1" target="_blank">6. House Robber III</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-coin-change">
+                        <label for="dp-coin-change">
+                            <a href="https://practice.geeksforgeeks.org/problems/coin-change2448/1" target="_blank">7. Coin Change</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-coin-change-2">
+                        <label for="dp-coin-change-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/coin-change-2/1" target="_blank">8. Coin Change 2</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-unique-paths">
+                        <label for="dp-unique-paths">
+                            <a href="https://practice.geeksforgeeks.org/problems/number-of-unique-paths5339/1" target="_blank">9. Unique Paths</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-unique-paths-2">
+                        <label for="dp-unique-paths-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/unique-paths-in-a-grid-with-obstacles/1" target="_blank">10. Unique Paths II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-min-path-sum">
+                        <label for="dp-min-path-sum">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-path-sum/1" target="_blank">11. Minimum Path Sum</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-triangle">
+                        <label for="dp-triangle">
+                            <a href="https://practice.geeksforgeeks.org/problems/triangle-path-sum/1" target="_blank">12. Triangle</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-max-fall-path">
+                        <label for="dp-max-fall-path">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-fall-path/1" target="_blank">13. Maximum Fall Path</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-min-fall-path">
+                        <label for="dp-min-fall-path">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-fall-path/1" target="_blank">14. Minimum Fall Path</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-chocolate-pickup">
+                        <label for="dp-chocolate-pickup">
+                            <a href="https://practice.geeksforgeeks.org/problems/chocolate-pickup/1" target="_blank">15. Chocolate Pickup</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-subset-sum">
+                        <label for="dp-subset-sum">
+                            <a href="https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1" target="_blank">16. Subset Sum</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-partition-equal">
+                        <label for="dp-partition-equal">
+                            <a href="https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1" target="_blank">17. Partition Equal Subset Sum</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-partition-k">
+                        <label for="dp-partition-k">
+                            <a href="https://practice.geeksforgeeks.org/problems/partition-array-to-k-subsets/1" target="_blank">18. Partition to K Equal Sum Subsets</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-coin-combinations">
+                        <label for="dp-coin-combinations">
+                            <a href="https://practice.geeksforgeeks.org/problems/coin-combinations/1" target="_blank">19. Coin Combinations</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-target-sum">
+                        <label for="dp-target-sum">
+                            <a href="https://practice.geeksforgeeks.org/problems/target-sum/1" target="_blank">20. Target Sum</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-unbounded-knapsack">
+                        <label for="dp-unbounded-knapsack">
+                            <a href="https://practice.geeksforgeeks.org/problems/unbounded-knapsack/1" target="_blank">21. Unbounded Knapsack</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-rod-cutting">
+                        <label for="dp-rod-cutting">
+                            <a href="https://practice.geeksforgeeks.org/problems/rod-cutting0840/1" target="_blank">22. Rod Cutting</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-coin-combinations-2">
+                        <label for="dp-coin-combinations-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/coin-combinations-2/1" target="_blank">23. Coin Combinations 2</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-lcs">
+                        <label for="dp-lcs">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1" target="_blank">24. Longest Common Subsequence</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-lcs-2">
+                        <label for="dp-lcs-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1" target="_blank">25. Longest Common Subsequence II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-lps">
+                        <label for="dp-lps">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-palindromic-subsequence-1612327878/1" target="_blank">26. Longest Palindromic Subsequence</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-min-insertions">
+                        <label for="dp-min-insertions">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1" target="_blank">27. Minimum Insertions to Make String Palindrome</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-min-deletions">
+                        <label for="dp-min-deletions">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1" target="_blank">28. Minimum Deletions to Make String Palindrome</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-lis">
+                        <label for="dp-lis">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1" target="_blank">29. Longest Increasing Subsequence</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-lis-2">
+                        <label for="dp-lis-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1" target="_blank">30. Longest Increasing Subsequence II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-lbs">
+                        <label for="dp-lbs">
+                            <a href="https://practice.geeksforgeeks.org/problems/longest-bitonic-subsequence/1" target="_blank">31. Longest Bitonic Subsequence</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-matrix-chain">
+                        <label for="dp-matrix-chain">
+                            <a href="https://practice.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1" target="_blank">32. Matrix Chain Multiplication</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-min-cost">
+                        <label for="dp-min-cost">
+                            <a href="https://practice.geeksforgeeks.org/problems/minimum-cost-to-cut-a-board-into-squares/1" target="_blank">33. Minimum Cost to Cut a Board into Squares</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-burst-balloons">
+                        <label for="dp-burst-balloons">
+                            <a href="https://practice.geeksforgeeks.org/problems/burst-balloons/1" target="_blank">34. Burst Balloons</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-evaluate-expression">
+                        <label for="dp-evaluate-expression">
+                            <a href="https://practice.geeksforgeeks.org/problems/evaluate-expression/1" target="_blank">35. Evaluate Expression to True</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-palindrome-partitioning">
+                        <label for="dp-palindrome-partitioning">
+                            <a href="https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1" target="_blank">36. Palindrome Partitioning</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-palindrome-partitioning-2">
+                        <label for="dp-palindrome-partitioning-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/palindrome-partitioning-2/1" target="_blank">37. Palindrome Partitioning II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-word-break">
+                        <label for="dp-word-break">
+                            <a href="https://practice.geeksforgeeks.org/problems/word-break1352/1" target="_blank">38. Word Break</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-word-break-2">
+                        <label for="dp-word-break-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/word-break-2/1" target="_blank">39. Word Break II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-edit-distance">
+                        <label for="dp-edit-distance">
+                            <a href="https://practice.geeksforgeeks.org/problems/edit-distance3702/1" target="_blank">40. Edit Distance</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-edit-distance-2">
+                        <label for="dp-edit-distance-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/edit-distance-2/1" target="_blank">41. Edit Distance II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-distinct-subsequences">
+                        <label for="dp-distinct-subsequences">
+                            <a href="https://practice.geeksforgeeks.org/problems/distinct-subsequences/1" target="_blank">42. Distinct Subsequences</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-distinct-subsequences-2">
+                        <label for="dp-distinct-subsequences-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/distinct-subsequences-2/1" target="_blank">43. Distinct Subsequences II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-wildcard-matching">
+                        <label for="dp-wildcard-matching">
+                            <a href="https://practice.geeksforgeeks.org/problems/wildcard-pattern-matching/1" target="_blank">44. Wildcard Pattern Matching</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-regex-matching">
+                        <label for="dp-regex-matching">
+                            <a href="https://practice.geeksforgeeks.org/problems/regex-matching/1" target="_blank">45. Regular Expression Matching</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings">
+                        <label for="dp-interleaving-strings">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings/1" target="_blank">46. Interleaving Strings</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-2">
+                        <label for="dp-interleaving-strings-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-2/1" target="_blank">47. Interleaving Strings II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-3">
+                        <label for="dp-interleaving-strings-3">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-3/1" target="_blank">48. Interleaving Strings III</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-4">
+                        <label for="dp-interleaving-strings-4">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-4/1" target="_blank">49. Interleaving Strings IV</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-5">
+                        <label for="dp-interleaving-strings-5">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-5/1" target="_blank">50. Interleaving Strings V</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-6">
+                        <label for="dp-interleaving-strings-6">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-6/1" target="_blank">51. Interleaving Strings VI</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-7">
+                        <label for="dp-interleaving-strings-7">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-7/1" target="_blank">52. Interleaving Strings VII</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-8">
+                        <label for="dp-interleaving-strings-8">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-8/1" target="_blank">53. Interleaving Strings VIII</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-9">
+                        <label for="dp-interleaving-strings-9">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-9/1" target="_blank">54. Interleaving Strings IX</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-10">
+                        <label for="dp-interleaving-strings-10">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-10/1" target="_blank">55. Interleaving Strings X</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-11">
+                        <label for="dp-interleaving-strings-11">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-11/1" target="_blank">56. Interleaving Strings XI</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-12">
+                        <label for="dp-interleaving-strings-12">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-12/1" target="_blank">57. Interleaving Strings XII</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-13">
+                        <label for="dp-interleaving-strings-13">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-13/1" target="_blank">58. Interleaving Strings XIII</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-14">
+                        <label for="dp-interleaving-strings-14">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-14/1" target="_blank">59. Interleaving Strings XIV</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="dp-interleaving-strings-15">
+                        <label for="dp-interleaving-strings-15">
+                            <a href="https://practice.geeksforgeeks.org/problems/interleaving-strings-15/1" target="_blank">60. Interleaving Strings XV</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" id="trie">
+                <h2>
+                    <div class="title-section">
+                        <span>Trie</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/6)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="trie-implementation">
+                        <label for="trie-implementation">
+                            <a href="https://practice.geeksforgeeks.org/problems/trie-insert-and-search0651/1" target="_blank">1. Trie Implementation (Insert and Search)</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="trie-delete">
+                        <label for="trie-delete">
+                            <a href="https://practice.geeksforgeeks.org/problems/trie-delete/1" target="_blank">2. Trie Delete</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="trie-prefix">
+                        <label for="trie-prefix">
+                            <a href="https://practice.geeksforgeeks.org/problems/prefix-match-with-other-strings/1" target="_blank">3. Prefix Match with Other Strings</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="trie-suffix">
+                        <label for="trie-suffix">
+                            <a href="https://practice.geeksforgeeks.org/problems/suffix-match-with-other-strings/1" target="_blank">4. Suffix Match with Other Strings</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="trie-palindrome">
+                        <label for="trie-palindrome">
+                            <a href="https://practice.geeksforgeeks.org/problems/palindrome-pairs/1" target="_blank">5. Palindrome Pairs</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="trie-xor">
+                        <label for="trie-xor">
+                            <a href="https://practice.geeksforgeeks.org/problems/maximum-xor-of-two-numbers-in-an-array/1" target="_blank">6. Maximum XOR of Two Numbers in an Array</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" id="bit-manipulation">
+                <h2>
+                    <div class="title-section">
+                        <span>Bit Manipulation</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/10)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s">
+                        <label for="bit-count-1s">
+                            <a href="https://practice.geeksforgeeks.org/problems/set-bits0143/1" target="_blank">1. Count Set Bits</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s-2">
+                        <label for="bit-count-1s-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-total-set-bits/1" target="_blank">2. Count Total Set Bits</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s-3">
+                        <label for="bit-count-1s-3">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-set-bits-in-given-range/1" target="_blank">3. Count Set Bits in Given Range</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s-4">
+                        <label for="bit-count-1s-4">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-set-bits-in-first-n-natural-numbers/1" target="_blank">4. Count Set Bits in First N Natural Numbers</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s-5">
+                        <label for="bit-count-1s-5">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-set-bits-in-an-integer/1" target="_blank">5. Count Set Bits in an Integer</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s-6">
+                        <label for="bit-count-1s-6">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-set-bits-in-an-integer/1" target="_blank">6. Count Set Bits in an Integer II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s-7">
+                        <label for="bit-count-1s-7">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-set-bits-in-an-integer/1" target="_blank">7. Count Set Bits in an Integer III</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s-8">
+                        <label for="bit-count-1s-8">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-set-bits-in-an-integer/1" target="_blank">8. Count Set Bits in an Integer IV</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s-9">
+                        <label for="bit-count-1s-9">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-set-bits-in-an-integer/1" target="_blank">9. Count Set Bits in an Integer V</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="bit-count-1s-10">
+                        <label for="bit-count-1s-10">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-set-bits-in-an-integer/1" target="_blank">10. Count Set Bits in an Integer VI</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" id="backtracking">
+                <h2>
+                    <div class="title-section">
+                        <span>Backtracking</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/19)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="rat-maze">
+                        <label for="rat-maze">
+                            <a href="https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1" target="_blank">1. Rat in a maze Problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="n-queens">
+                        <label for="n-queens">
+                            <a href="https://practice.geeksforgeeks.org/problems/n-queen-problem0315/1" target="_blank">2. N-Queen Problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="knight-tour">
+                        <label for="knight-tour">
+                            <a href="https://practice.geeksforgeeks.org/problems/knight-tour/1" target="_blank">3. Knight's Tour Problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="word-break-backtracking">
+                        <label for="word-break-backtracking">
+                            <a href="https://practice.geeksforgeeks.org/problems/word-break-part-23249/1" target="_blank">4. Word Break Problem using Backtracking</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="remove-invalid-parentheses">
+                        <label for="remove-invalid-parentheses">
+                            <a href="https://practice.geeksforgeeks.org/problems/remove-invalid-parentheses/1" target="_blank">5. Remove Invalid Parentheses</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="sudoku-solver">
+                        <label for="sudoku-solver">
+                            <a href="https://practice.geeksforgeeks.org/problems/solve-the-sudoku-1587115621/1" target="_blank">6. Solve Sudoku</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="m-coloring">
+                        <label for="m-coloring">
+                            <a href="https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1" target="_blank">7. m Coloring Problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="print-palindromic-partitions">
+                        <label for="print-palindromic-partitions">
+                            <a href="https://practice.geeksforgeeks.org/problems/print-all-palindromic-partitions-of-a-string/1" target="_blank">8. Print all Palindromic Partitions of a String</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="subset-sum">
+                        <label for="subset-sum">
+                            <a href="https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1" target="_blank">9. Subset Sum Problem</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="combination-sum">
+                        <label for="combination-sum">
+                            <a href="https://practice.geeksforgeeks.org/problems/combination-sum-1587115620/1" target="_blank">10. Combination Sum</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="permutation-string">
+                        <label for="permutation-string">
+                            <a href="https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1" target="_blank">11. Print all Permutations of a String</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="generate-parentheses">
+                        <label for="generate-parentheses">
+                            <a href="https://practice.geeksforgeeks.org/problems/generate-all-possible-parentheses/1" target="_blank">12. Generate all Possible Parentheses</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="word-search">
+                        <label for="word-search">
+                            <a href="https://practice.geeksforgeeks.org/problems/word-search/1" target="_blank">13. Word Search</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="n-queens-2">
+                        <label for="n-queens-2">
+                            <a href="https://practice.geeksforgeeks.org/problems/n-queen-problem0315/1" target="_blank">14. N-Queens II</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="unique-paths-3">
+                        <label for="unique-paths-3">
+                            <a href="https://practice.geeksforgeeks.org/problems/unique-paths-3/1" target="_blank">15. Unique Paths III</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="find-path">
+                        <label for="find-path">
+                            <a href="https://practice.geeksforgeeks.org/problems/find-path-in-matrix/1" target="_blank">16. Find Path in Matrix</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="partition-equal-subset">
+                        <label for="partition-equal-subset">
+                            <a href="https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1" target="_blank">17. Partition Equal Subset Sum</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="matchsticks-square">
+                        <label for="matchsticks-square">
+                            <a href="https://practice.geeksforgeeks.org/problems/matchsticks-game/1" target="_blank">18. Matchsticks to Square</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic" id="linked-list">
+                <h2>
+                    <div class="title-section">
+                        <span>Linked List</span>
+                    </div>
+                    <div class="step-counter">
+                        <span class="progress-counter">(0/37)</span>
+                    </div>
+                </h2>
+                <div class="problems">
+                    <div class="problem">
+                        <input type="checkbox" id="reverse-ll">
+                        <label for="reverse-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/reverse-a-linked-list/1" target="_blank">1. Reverse a Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="middle-ll">
+                        <label for="middle-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/finding-middle-element-in-a-linked-list/1" target="_blank">2. Find Middle of the Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="merge-ll">
+                        <label for="merge-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1" target="_blank">3. Merge two sorted Linked Lists</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="remove-nth">
+                        <label for="remove-nth">
+                            <a href="https://practice.geeksforgeeks.org/problems/remove-nth-node-from-end-of-list/1" target="_blank">4. Remove Nth node from end of list</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="delete-node">
+                        <label for="delete-node">
+                            <a href="https://practice.geeksforgeeks.org/problems/delete-without-head-pointer/1" target="_blank">5. Delete a Node in single Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="add-numbers">
+                        <label for="add-numbers">
+                            <a href="https://practice.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1" target="_blank">6. Add two numbers represented by Linked Lists</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="intersection-ll">
+                        <label for="intersection-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1" target="_blank">7. Intersection of two Linked Lists</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="detect-loop">
+                        <label for="detect-loop">
+                            <a href="https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1" target="_blank">8. Detect Loop in Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="remove-loop">
+                        <label for="remove-loop">
+                            <a href="https://practice.geeksforgeeks.org/problems/remove-loop-in-linked-list/1" target="_blank">9. Remove Loop in Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="find-length-loop">
+                        <label for="find-length-loop">
+                            <a href="https://practice.geeksforgeeks.org/problems/find-length-of-loop/1" target="_blank">10. Find length of Loop</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="check-palindrome-ll">
+                        <label for="check-palindrome-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/check-if-linked-list-is-pallindrome/1" target="_blank">11. Check if Linked List is Palindrome</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="remove-duplicates-ll">
+                        <label for="remove-duplicates-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/remove-duplicates-from-an-unsorted-linked-list/1" target="_blank">12. Remove duplicates from an unsorted linked list</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="rotate-ll">
+                        <label for="rotate-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/rotate-a-linked-list/1" target="_blank">13. Rotate a Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="flatten-ll">
+                        <label for="flatten-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1" target="_blank">14. Flattening a Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="clone-ll">
+                        <label for="clone-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1" target="_blank">15. Clone a Linked List with next and random pointer</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="intersection-sorted">
+                        <label for="intersection-sorted">
+                            <a href="https://practice.geeksforgeeks.org/problems/intersection-of-two-sorted-linked-lists/1" target="_blank">16. Intersection of two Sorted Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="pairwise-swap">
+                        <label for="pairwise-swap">
+                            <a href="https://practice.geeksforgeeks.org/problems/pairwise-swap-elements-of-a-linked-list-by-swapping-data/1" target="_blank">17. Pairwise swap elements of a linked list</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="add-1-ll">
+                        <label for="add-1-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1" target="_blank">18. Add 1 to a number represented as linked list</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="add-2-numbers">
+                        <label for="add-2-numbers">
+                            <a href="https://practice.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1" target="_blank">19. Add two numbers represented by linked lists</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="multiply-ll">
+                        <label for="multiply-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/multiply-two-linked-lists/1" target="_blank">20. Multiply two linked lists</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="delete-nodes-greater">
+                        <label for="delete-nodes-greater">
+                            <a href="https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1" target="_blank">21. Delete nodes having greater value on right</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="segregate-even-odd">
+                        <label for="segregate-even-odd">
+                            <a href="https://practice.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list5030/1" target="_blank">22. Segregate even and odd nodes in a Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="nth-node-end">
+                        <label for="nth-node-end">
+                            <a href="https://practice.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1" target="_blank">23. Nth node from end of linked list</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="first-non-repeating">
+                        <label for="first-non-repeating">
+                            <a href="https://practice.geeksforgeeks.org/problems/first-non-repeating-character-in-a-stream1216/1" target="_blank">24. First non-repeating character in a stream</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="count-triplets">
+                        <label for="count-triplets">
+                            <a href="https://practice.geeksforgeeks.org/problems/count-triplets-1/1" target="_blank">25. Count triplets in a sorted DLL whose sum is equal to given value "X"</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="sort-dll">
+                        <label for="sort-dll">
+                            <a href="https://practice.geeksforgeeks.org/problems/sort-a-linked-list/1" target="_blank">26. Sort a "K" sorted Doubly Linked list</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="rotate-dll">
+                        <label for="rotate-dll">
+                            <a href="https://practice.geeksforgeeks.org/problems/rotate-doubly-linked-list-by-p-nodes/1" target="_blank">27. Rotate DoublyLinked list by P nodes</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="reverse-dll-groups">
+                        <label for="reverse-dll-groups">
+                            <a href="https://practice.geeksforgeeks.org/problems/reverse-doubly-linked-list-in-groups/1" target="_blank">28. Reverse a Doubly Linked list in groups of given size "K"</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="can-make-palindrome">
+                        <label for="can-make-palindrome">
+                            <a href="https://practice.geeksforgeeks.org/problems/can-make-palindrome-from-substring/1" target="_blank">29. Can we reverse a linked list in less than O(n) ?</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="quicksort-dll">
+                        <label for="quicksort-dll">
+                            <a href="https://practice.geeksforgeeks.org/problems/quicksort-on-doubly-linked-list/1" target="_blank">30. Why Quicksort is preferred for. Arrays and Merge Sort for Linked Lists ?</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="flatten-multilevel">
+                        <label for="flatten-multilevel">
+                            <a href="https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1" target="_blank">31. Flatten a Linked List</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="sort-012-ll">
+                        <label for="sort-012-ll">
+                            <a href="https://practice.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1" target="_blank">32. Sort a LL of 0's, 1's and 2's</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="clone-random">
+                        <label for="clone-random">
+                            <a href="https://practice.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1" target="_blank">33. Clone a linked list with next and random pointer</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="merge-k-sorted">
+                        <label for="merge-k-sorted">
+                            <a href="https://practice.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1" target="_blank">34. Merge K sorted Linked list</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="multiply-polynomials">
+                        <label for="multiply-polynomials">
+                            <a href="https://practice.geeksforgeeks.org/problems/polynomial-addition/1" target="_blank">35. Multiply 2 no. represented by LL</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="delete-nodes-alternate">
+                        <label for="delete-nodes-alternate">
+                            <a href="https://practice.geeksforgeeks.org/problems/delete-alternate-nodes/1" target="_blank">36. Delete nodes which have a greater value on right side</a>
+                        </label>
+                    </div>
+                    <div class="problem">
+                        <input type="checkbox" id="segregate-012">
+                        <label for="segregate-012">
+                            <a href="https://practice.geeksforgeeks.org/problems/segregate-even-and-odd-nodes-in-a-linked-list5030/1" target="_blank">37. Segregate even and odd nodes in a Linked List</a>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

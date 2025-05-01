@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextStepPrep</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="transition-overlay">
+        <canvas id="water-canvas"></canvas>
+        <div class="loading-indicator">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div>
+    <h1 class="floating-title">NextStepPrep</h1>
+    <div class="boxes-container">
+        <div class="box-row">
+            <div class="box" onclick="navigateToDSA()">
+                <h2>DSA Practice</h2>
+                <p>Master DSA with interactive problems and interview preparation.</p>
+            </div>
+            <div class="box" onclick="navigateToAptitude()">
+                <h2>Aptitude Training</h2>
+                <p>Boost your quantitative and logical reasoning skills.</p>
+            </div>
+        </div>
+        <div class="box-row">
+            <div class="box" onclick="navigateToResumeBuilder()">
+                <h2>Resume Builder</h2>
+                <p>Create ATS-friendly resumes with smart templates.</p>
+            </div>
+            <div class="box" onclick="navigateToResumeVideos()">
+                <h2>Resume Videos</h2>
+                <p>Learn to create professional resume videos.</p>
+            </div>
+        </div>
+        <div class="box-row">
+            <div class="box" onclick="navigateToCertificates()">
+                <h2>Certificate Courses</h2>
+                <p>Access industry-relevant certification programs.</p>
+            </div>
+            <div class="box" onclick="navigateToLinkedIn()">
+                <h2>LinkedIn Optimization</h2>
+                <p>Enhance your LinkedIn profile for better visibility.</p>
+            </div>
+        </div>
+        <div class="box-row">
+            <div class="large-box" onclick="navigateToProjects()">
+                <h2>Project Ideas</h2>
+                <p>Explore innovative project ideas with implementation guidance.</p>
+            </div>
+        </div>
+    </div>
+    <canvas id="particles"></canvas>
+    <script src="particles.js"></script>
+    <script src="water-simulation.js"></script>
+    <script>
+        const transitionOverlay = document.getElementById('transition-overlay');
+        const canvas = document.getElementById('water-canvas');
+        const loadingIndicator = transitionOverlay.querySelector('.loading-indicator');
+        let waterSimulation;
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            waterSimulation = new WaterSimulation(canvas);
+        }
+
+        function startTransition() {
+            transitionOverlay.style.opacity = '1';
+            transitionOverlay.style.visibility = 'visible';
+            initCanvas();
+            setTimeout(() => {
+                loadingIndicator.style.opacity = '1';
+            }, 50);
+        }
+
+        function navigateToDSA() {
+            startTransition();
+            setTimeout(() => {
+                window.location.href = './dsa/index.html';
+            }, 1500);
+        }
+
+        function navigateToAptitude() {
+            startTransition();
+            setTimeout(() => {
+                window.location.href = './aptt/index.html';
+            }, 1500);
+        }
+
+        function navigateToResumeBuilder() {
+            startTransition();
+            setTimeout(() => {
+                window.location.href = 'https://www.resumebuilder.com/';
+            }, 1500);
+        }
+
+        function navigateToResumeVideos() {
+            startTransition();
+            setTimeout(() => {
+                window.location.href = 'resume-videos.html';
+            }, 1500);
+        }
+
+        function navigateToLinkedIn() {
+            startTransition();
+            setTimeout(() => {
+                window.location.href = 'linkedin-optimization.html';
+            }, 1500);
+        }
+
+        function navigateToCertificates() {
+            startTransition();
+            setTimeout(() => {
+                window.location.href = 'certificate-courses.html';
+            }, 1500);
+        }
+
+        function navigateToProjects() {
+            const box = event.currentTarget;
+            box.classList.add('clicked');
+            startTransition();
+            setTimeout(() => {
+                window.location.href = 'project-ideas.html';
+            }, 1500);
+        }
+
+        // Add transition effect when page loads
+        window.addEventListener('load', () => {
+            transitionOverlay.style.opacity = '0';
+            loadingIndicator.style.opacity = '0';
+            setTimeout(() => {
+                transitionOverlay.style.visibility = 'hidden';
+            }, 1500);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (waterSimulation) {
+                waterSimulation.resize();
+            }
+        });
+    </script>
+</body>
+</html> 

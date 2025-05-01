@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Preparation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .feature-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-list a:hover {
+            color: var(--text-color);
+            transform: translateX(5px);
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+            font-weight: 400;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='../index.html'">← Back</button>
+    <canvas id="particles"></canvas>
+    <div class="content">
+        <header>
+            <h1 class="title">Welcome to Interview Preparation</h1>
+            <p class="subtitle">All types of aptitude, reasoning, and verbal questions can be mastered here through smart practice.</p>
+        </header>
+        
+        <div class="container">
+            <div class="button-box">
+                <h2>Aptitude</h2>
+                <ul class="feature-list">
+                    <li><a href="arithmetic_aptitude.html">Arithmetic Aptitude</a></li>
+                    <li><a href="data_interpretation.html">Data Interpretation</a></li>
+                </ul>
+            </div>
+            <div class="button-box">
+                <h2>Verbal Ability</h2>
+                <ul class="feature-list">
+                    <li><a href="verbal_ability.html">Verbal Ability</a></li>
+                    <li><a href="logical_reasoning.html">Verbal Reasoning</a></li>
+                    <li><a href="non_verbal_reasoning.html">Non Verbal Reasoning</a></li>
+                    <li><a href="verbal_reasoning.html">Verbal Reasoning</a></li>
+                </ul>
+            </div>
+            <div class="button-box">
+                <h2>Interview</h2>
+                <ul class="feature-list">
+                    <li>Placement Papers</li>
+                    <li>Group Discussion</li>
+                    <li>HR Interview</li>
+                </ul>
+                <a href="#" class="read-more">Read more...</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

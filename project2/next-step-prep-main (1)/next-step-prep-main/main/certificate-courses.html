@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .header-container {
+            text-align: center;
+            padding: 40px 20px 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            font-size: 2.2em;
+            margin: 0;
+            font-weight: 500;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .page-subtitle {
+            font-size: 1em;
+            color: #a0a0a0;
+            margin: 10px auto 0;
+            max-width: 800px;
+            line-height: 1.5;
+            animation: fadeInUp 1s ease;
+            font-weight: 400;
+        }
+
+        .boxes-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+            width: 100%;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: calc(33.33% - 14px);
+            min-width: 250px;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            padding: 1px;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .box:hover::before {
+            background: linear-gradient(45deg, #00c6ff, #0072ff, #00c6ff);
+            background-size: 200% 200%;
+            animation: gradient 2s linear infinite;
+        }
+
+        .box h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            font-weight: 500;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .box p {
+            margin: 0;
+            color: #a0a0a0;
+            font-size: 0.9em;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        .box .provider {
+            margin-top: 10px;
+            color: #00c6ff;
+            font-weight: 400;
+            font-size: 0.85em;
+        }
+
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+            font-weight: 400;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @media (max-width: 1200px) {
+            .box {
+                width: calc(33.33% - 14px);
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .box-row {
+                flex-wrap: wrap;
+            }
+            .box {
+                width: calc(50% - 10px);
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box {
+                width: 100%;
+                min-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">← Back</button>
+    <canvas id="particles"></canvas>
+    
+    <div class="header-container">
+        <h1 class="page-title">Certificate Courses</h1>
+        <p class="page-subtitle">Gain industry-recognized certifications through curated courses designed to strengthen your resume and boost your placement readiness.</p>
+    </div>
+    
+    <div class="boxes-container">
+        <div class="box-row">
+            <div class="box" onclick="window.open('https://infyspringboard.onwingspan.com/web/en//#iss=https%3A%2F%2Finfyspringboard.onwingspan.com%2Fauth%2Frealms%2Finfyspringboard&iss=https%3A%2F%2Finfyspringboard.onwingspan.com%2Fauth%2Frealms%2Finfyspringboard', '_blank')">
+                <h2>TCS Springboard</h2>
+                <p>Access TCS's comprehensive learning platform for professional development.</p>
+                <div class="provider">TCS</div>
+            </div>
+            <div class="box" onclick="window.open('https://opportunity.linkedin.com/skills-for-in-demand-jobs', '_blank')">
+                <h2>LinkedIn Learning</h2>
+                <p>Develop in-demand skills with LinkedIn's professional courses.</p>
+                <div class="provider">LinkedIn</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.coursera.org/search?query=coursera%20project%20network&utm_medium=sem&utm_source=gg&utm_campaign=b2c_india_special_coursera_ftcof_courseraplus_cx_dr_bau_gg_sem_bd-ex_in_all_m_hyb_24-05_x&campaignid=21327429274&adgroupid=162815312357&device=c&keyword=coursera&matchtype=e&network=g&devicemodel=&creativeid=700607287634&assetgroupid=&targetid=kwd-36262515261&extensionid=&placement=&gad_source=1&gclid=Cj0KCQjwy46_BhDOARIsAIvmcwM6C2pm_s-dM2eh_aktromDbHO3TJYRx_-BH8mRqJN2g6-3LjQR1tAaAocNEALw_wcB', '_blank')">
+                <h2>Coursera Projects</h2>
+                <p>Hands-on projects to build practical skills in various domains.</p>
+                <div class="provider">Coursera</div>
+            </div>
+        </div>
+
+        <div class="box-row">
+            <div class="box" onclick="window.open('https://www.edx.org/learn/financial-accounting/massachusetts-institute-of-technology-financial-accounting', '_blank')">
+                <h2>MITx: Financial Accounting</h2>
+                <p>Learn financial accounting principles from MIT experts.</p>
+                <div class="provider">MIT</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce', '_blank')">
+                <h2>Google Digital Marketing</h2>
+                <p>Master digital marketing and e-commerce strategies.</p>
+                <div class="provider">Google</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.coursera.org/learn/google-prompting-essentials', '_blank')">
+                <h2>Google Prompting Essentials</h2>
+                <p>Learn effective prompting techniques for AI tools.</p>
+                <div class="provider">Google</div>
+            </div>
+        </div>
+
+        <div class="box-row">
+            <div class="box" onclick="window.open('https://www.coursera.org/learn/private-equity', '_blank')">
+                <h2>Private Equity and VC</h2>
+                <p>Understand private equity and venture capital investments.</p>
+                <div class="provider">Coursera</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.coursera.org/learn/duke-behavioral-finance', '_blank')">
+                <h2>Behavioral Finance</h2>
+                <p>Explore the psychology behind financial decisions.</p>
+                <div class="provider">Duke University</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.coursera.org/learn/google-ai-essentials', '_blank')">
+                <h2>Google AI Essentials</h2>
+                <p>Fundamentals of AI and machine learning concepts.</p>
+                <div class="provider">Google</div>
+            </div>
+        </div>
+
+        <div class="box-row">
+            <div class="box" onclick="window.open('https://www.coursera.org/learn/ai-for-everyone', '_blank')">
+                <h2>AI For Everyone</h2>
+                <p>Introduction to AI concepts for non-technical professionals.</p>
+                <div class="provider">Coursera</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.coursera.org/specializations/deep-learning', '_blank')">
+                <h2>Deep Learning Specialization</h2>
+                <p>Comprehensive course on deep learning and neural networks.</p>
+                <div class="provider">Coursera</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.coursera.org/specializations/machine-learning-introduction', '_blank')">
+                <h2>Machine Learning Specialization</h2>
+                <p>Master machine learning algorithms and applications.</p>
+                <div class="provider">Coursera</div>
+            </div>
+        </div>
+
+        <div class="box-row">
+            <div class="box" onclick="window.open('https://university.webflow.com/courses/webflow-101', '_blank')">
+                <h2>Webflow 101</h2>
+                <p>Learn web design and development with Webflow.</p>
+                <div class="provider">Webflow</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/', '_blank')">
+                <h2>ChatGPT Prompt Engineering</h2>
+                <p>Master prompt engineering for AI applications.</p>
+                <div class="provider">DeepLearning.AI</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.cloudskillsboost.google/course_templates/536', '_blank')">
+                <h2>Introduction to Generative AI</h2>
+                <p>Learn the fundamentals of generative AI technologies.</p>
+                <div class="provider">Google Cloud</div>
+            </div>
+        </div>
+
+        <div class="box-row">
+            <div class="box" onclick="window.open('https://academy.hubspot.com/courses/digital-marketing', '_blank')">
+                <h2>Digital Marketing Certification</h2>
+                <p>Comprehensive digital marketing training program.</p>
+                <div class="provider">HubSpot</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science', '_blank')">
+                <h2>CS50: Computer Science</h2>
+                <p>Harvard's introduction to computer science and programming.</p>
+                <div class="provider">Harvard University</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.facebook.com/business/learn/social-media-marketing-certificate-coursera', '_blank')">
+                <h2>Social Media Marketing</h2>
+                <p>Professional certificate in social media marketing.</p>
+                <div class="provider">Meta</div>
+            </div>
+        </div>
+
+        <div class="box-row">
+            <div class="box" onclick="window.open('https://www.semrush.com/academy/courses/', '_blank')">
+                <h2>Online Marketing Courses</h2>
+                <p>Learn SEO, content marketing, and digital strategy.</p>
+                <div class="provider">SEMrush</div>
+            </div>
+            <div class="box" onclick="window.open('https://www.udemy.com/course/3actstructure/', '_blank')">
+                <h2>Creative Writing Masterclass</h2>
+                <p>Master the art of storytelling with the 3-act structure.</p>
+                <div class="provider">Udemy</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="particles.js"></script>
+</body>
+</html> 
